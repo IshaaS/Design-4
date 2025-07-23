@@ -35,25 +35,25 @@ class SkipIterator implements Iterator<Integer> {
                 else map.put(element, freq-1 );
             }else nextEl=element;
         }
-    }
+    } //O(n)
     @Override
     public boolean hasNext() {
        return nextEl!=null;
-    }
+    } //O(1)
 
     @Override
     public Integer next() {
         Integer result = nextEl;
         advance();
         return result;
-    }
+    } //O(1)
 
     public void skip(int num) {
         if(num==nextEl) advance();
         else{
             map.put(num, map.getOrDefault(num,0)+1);
         }
-    }
+    }//O(n)
 }
 
 public class Main {
